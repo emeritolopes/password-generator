@@ -88,10 +88,18 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
+
+var numberCharacters = prompt("How many characters do you want? They have to be more than 8 and less than 128");
+var includeUppercase = confirm("Include uppercase letters?");
+var includeLowercase = confirm("Include lowercase letters?");
+var includeNumbers = confirm("Include numbers?");
+var includeSpecialChars = confirm("Include special characters?");
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+ 
 }
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -100,7 +108,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
+ 
 }
 
 // Get references to the #generate element
