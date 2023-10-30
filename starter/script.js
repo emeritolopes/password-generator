@@ -89,12 +89,23 @@ var upperCasedCharacters = [
 ];
 
 
-
 var numberCharacters = prompt("How many characters do you want? They have to be more than 8 and less than 128");
 var includeUppercase = confirm("Include uppercase letters?");
 var includeLowercase = confirm("Include lowercase letters?");
 var includeNumbers = confirm("Include numbers?");
 var includeSpecialChars = confirm("Include special characters?");
+
+if(numberCharacters === false && includeUppercase === false && includeLowercase === false && includeNumbers === false && includeSpecialChars === false) {
+  alert("You must select at least one type of character");
+}
+
+var passwordOptions = {
+  numberCharacters: numberCharacters,
+  includeUppercase: includeUppercase,
+  includeLowercase: includeLowercase,
+  includeNumbers: includeNumbers,
+  includeSpecialChars: includeSpecialChars
+};
 // Function to prompt user for password options
 function getPasswordOptions() {
  
@@ -103,12 +114,16 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+var randomIndex = Math.floor(Math.random() * arr.length);
+var randElement = arr[randomIndex];
+  return randElement;
 }
 
 // Function to generate password with user input
 function generatePassword() {
- 
+ var options = getPasswordOptions();
+ var result = [];
+ var possibleCharacters = [];
 }
 
 // Get references to the #generate element
