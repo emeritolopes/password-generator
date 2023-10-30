@@ -106,6 +106,8 @@ var passwordOptions = {
   includeNumbers: includeNumbers,
   includeSpecialChars: includeSpecialChars
 };
+
+  return passwordOptions;
 // Function to prompt user for password options
 function getPasswordOptions() {
  
@@ -121,9 +123,55 @@ var randElement = arr[randomIndex];
 
 // Function to generate password with user input
 function generatePassword() {
- var options = getPasswordOptions();
- var result = [];
+ var options = getPasswordOptions(); 
+//  var to store passw
+ var result = []; 
+//  arr to store types of chr
  var possibleCharacters = [];
+//  arr to store each one of the char that will be used
+ var definitiveCharacters = [];
+}
+// conditional that add number of characters to arr of possible pass
+// push the random character to definitiveCharacters arr
+if(options.numberCharacters) {
+  possibleCharacters = possibleCharacters.concat(numberCharacters);
+  definitiveCharacters.push(getRandom(numberCharacters));
+}
+// conditional that add upper case to arr of possible pass
+// // push the random character to definitiveCharacters arr
+if(options.includeUppercase) {
+  possibleCharacters = possibleCharacters.concat(includeUppercase);
+  definitiveCharacters.push(getRandom(includeUppercase));
+}
+// conditional that add lower case to arr of possible pass
+// // push the random character to definitiveCharacters arr
+if(options.includeLowercase) {
+  possibleCharacters = possibleCharacters.concat(includeLowercase);
+  definitiveCharacters.push(getRandom(includeLowercase));
+}
+// conditional that add a number characters to arr of possible pass
+// // push the random character to definitiveCharacters arr
+if(options.includeNumbers) {
+  possibleCharacters = possibleCharacters.concat(includeNumbers);
+  definitiveCharacters.push(getRandom(includeNumbers));
+}
+// conditional that add special characters to arr of possible pass
+// // push the random character to definitiveCharacters arr
+if(options.includeSpecialChars) {
+  possibleCharacters = possibleCharacters.concat(includeSpecialChars);
+  definitiveCharacters.push(getRandom(includeSpecialChars));
+}
+
+// for loop to get pass length 
+
+for (var i =0; i < option.length; i++) {
+  var possibleCharacters = getRandom(possibleCharacters);
+  
+  result.push(possibleCharacters);
+}
+
+for (var i = 0; i < definitiveCharacters.length; i++) {
+  result[1] = definitiveCharacters[i];
 }
 
 // Get references to the #generate element
