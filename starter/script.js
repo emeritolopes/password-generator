@@ -146,7 +146,7 @@ function generatePassword() {
 
   // conditional that add number of characters to arr of possible pass
   // push the random character to definitiveCharacters arr
-  if (options.numericCharacters) {
+  if (options.includeNumbers) {
     possibleCharacters = possibleCharacters.concat(numericCharacters);
     definitiveCharacters.push(getRandom(numericCharacters));
   }
@@ -170,7 +170,7 @@ function generatePassword() {
   // }
   // conditional that add special characters to arr of possible pass
   // // push the random character to definitiveCharacters arr
-  if (options.specialCharacters) {
+  if (options.includeSpecialChars) {
     possibleCharacters = possibleCharacters.concat(specialCharacters);
     definitiveCharacters.push(getRandom(specialCharacters));
   }
@@ -180,7 +180,7 @@ function generatePassword() {
   console.log(possibleCharacters)
   console.log(definitiveCharacters)
 
-  for(i = 0; i < options.numericCharacters - definitiveCharacters.length; i++) {
+  for(var i = 0; i < options.numericCharacters - definitiveCharacters.length; i++) {
     result.push(getRandom(possibleCharacters))
   }
 
