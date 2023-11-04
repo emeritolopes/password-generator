@@ -117,7 +117,7 @@ function getPasswordOptions() {
   }
 
   var passwordOptions = {
-    numericCharacters: numericCharacters,
+    numberCharacters: numberCharacters,
     includeUppercase: includeUppercase,
     includeLowercase: includeLowercase,
     includeNumbers: includeNumbers,
@@ -180,7 +180,7 @@ function generatePassword() {
   console.log(possibleCharacters)
   console.log(definitiveCharacters)
 
-  for(var i = 0; i < options.numericCharacters - definitiveCharacters.length; i++) {
+  for(var i = 0; i < options.numberCharacters - definitiveCharacters.length; i++) {
     result.push(getRandom(possibleCharacters))
   }
 
@@ -209,3 +209,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
